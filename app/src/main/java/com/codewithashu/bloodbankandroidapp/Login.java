@@ -28,7 +28,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mLoginuser = (EditText)findViewById(R.id.loginusername);
+        mLoginuser = (EditText)findViewById(R.id.loginemail);
         mLoginpass = (EditText)findViewById(R.id.loginPassword);
         mLogin = (Button)findViewById(R.id.loginbutton);
         progressBar = findViewById(R.id.progressBar2);
@@ -48,7 +48,7 @@ public class Login extends AppCompatActivity {
                 String pass = mLoginpass.getText().toString();
 
                 if(TextUtils.isEmpty(name)){
-                    mLoginuser.setError("Name is required");
+                    mLoginuser.setError("Email is required");
                     return;
                 }
                 if(TextUtils.isEmpty(pass)){

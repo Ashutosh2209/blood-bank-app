@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUp extends AppCompatActivity {
     TextView loginText;
-    EditText mSignupname, mSignupage, mSignupbloodgroup, mSignupphone, mSignuppass;
+    EditText mSignupname, mSignupage, mSignupbloodgroup, mSignupphone, mSignupemail,mSignuppass;
     Button mSignup;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
@@ -32,6 +32,7 @@ public class SignUp extends AppCompatActivity {
         mSignupage = (EditText)findViewById(R.id.Signupage);
         mSignupbloodgroup = (EditText)findViewById(R.id.Signupbloodgrp);
         mSignupphone = (EditText)findViewById(R.id.Signupphone);
+        mSignupemail = (EditText)findViewById(R.id.Signupemail);
         mSignuppass = (EditText)findViewById(R.id.Signuppassword);
         mSignup = (Button)findViewById(R.id.loginbutton);
         fAuth = FirebaseAuth.getInstance();

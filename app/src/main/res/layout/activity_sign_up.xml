@@ -12,7 +12,7 @@
         android:layout_width="146dp"
         android:layout_height="158dp"
         android:layout_gravity="left|center_vertical"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="260dp"
         android:src="@drawable/loginbg_new" />
 
     <TextView
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:fontFamily="sans-serif-black"
         android:text="Sign Up"
         android:textColor="#FFFFFF"
@@ -31,7 +31,7 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="90dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
@@ -43,7 +43,7 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="150dp"
         android:ems="10"
         android:hint="Age"
         android:inputType="textPersonName"
@@ -55,7 +55,7 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="210dp"
         android:ems="10"
         android:hint="Blood Group"
         android:inputType="textPersonName"
@@ -67,9 +67,21 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="270dp"
         android:ems="10"
         android:hint="Phone Number"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/Signupemail"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="330dp"
+        android:ems="10"
+        android:hint="Email Address"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
@@ -79,19 +91,20 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="390dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
 
+
     <Button
         android:id="@+id/loginbutton"
         android:layout_width="123dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="430dp"
+        android:layout_marginTop="450dp"
 
         android:background="@drawable/rounded_corner"
         android:text="Register"
@@ -102,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="520dp"
         android:text="Already have an account? Login Here"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
@@ -113,7 +126,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="180dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="560dp"
         android:visibility="invisible" />
 
 </FrameLayout>
