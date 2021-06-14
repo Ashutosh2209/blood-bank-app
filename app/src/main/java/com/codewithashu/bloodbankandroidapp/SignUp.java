@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUp extends AppCompatActivity {
     TextView loginText;
-    EditText mSignupname, mSignupage, mSignupbloodgroup, mSignupphone, mSignuppass;
+    EditText mSignupname, mSignupage, mSignupbloodgroup, mSignupphone, mSignuppass, mSignupemail;
     Button mSignup;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
@@ -33,12 +33,13 @@ public class SignUp extends AppCompatActivity {
         mSignupbloodgroup = (EditText)findViewById(R.id.Signupbloodgrp);
         mSignupphone = (EditText)findViewById(R.id.Signupphone);
         mSignuppass = (EditText)findViewById(R.id.Signuppassword);
+        mSignupemail = (EditText)findViewById(R.id.Signupemail);
         mSignup = (Button)findViewById(R.id.loginbutton);
         fAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
         loginText = (TextView)findViewById(R.id.textView3);
 
-        /*if(fAuth.getCurrentUser()!=null);{
+       /* if(fAuth.getCurrentUser()!=null);{
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
         }*/
@@ -46,11 +47,11 @@ public class SignUp extends AppCompatActivity {
         mSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = mSignupname.getText().toString().trim();
+                String email = mSignupemail.getText().toString().trim();
                 String pass = mSignuppass.getText().toString();
 
-                if(TextUtils.isEmpty(name)){
-                    mSignupname.setError("Name is required");
+                if(TextUtils.isEmpty(email)){
+                    mSignupemail.setError("Email is required");
                     return;
                 }
                 if(TextUtils.isEmpty(pass)){
@@ -63,7 +64,7 @@ public class SignUp extends AppCompatActivity {
                 }
                 progressBar.setVisibility(View.VISIBLE);
 
-                fAuth.createUserWithEmailAndPassword(name,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                fAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
