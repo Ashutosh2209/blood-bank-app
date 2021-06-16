@@ -46,9 +46,11 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 String name = mLoginuser.getText().toString().trim();
                 String pass = mLoginpass.getText().toString();
+                startActivity(new Intent(getApplicationContext(), Dashboard.class));
 
                 if(TextUtils.isEmpty(name)){
-                    mLoginuser.setError("Email is required");
+                    
+                    mLoginuser.setError("Username is required");
                     return;
                 }
                 if(TextUtils.isEmpty(pass)){
@@ -62,18 +64,18 @@ public class Login extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
 
-                fAuth.signInWithEmailAndPassword(name,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+               /* fAuth.signInWithEmailAndPassword(name,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Login.this, "Login Successfull",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
                         }else{
                             Toast.makeText(Login.this, "Error!.."+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }
-                });
+                });*/
             }
         });
     }
