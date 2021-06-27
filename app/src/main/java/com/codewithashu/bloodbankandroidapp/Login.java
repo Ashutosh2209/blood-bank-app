@@ -64,7 +64,7 @@ public class Login extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
 
-               /* fAuth.signInWithEmailAndPassword(name,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                fAuth.signInWithEmailAndPassword(name,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
@@ -75,7 +75,7 @@ public class Login extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
                         }
                     }
-                });*/
+                });
             }
         });
     }

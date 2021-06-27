@@ -5,48 +5,62 @@
     android:layout_height="match_parent"
     android:background="#DD3A3A">
 
+
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-black"
-        android:text="Delete Blood"
+        android:text="Donate Blood"
         android:textColor="#FFFFFF"
         android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine9"
+        android:id="@+id/editTextTextMultiLine4"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="150dp"
         android:ems="10"
-        android:hint="Enter Blood Group"
+        android:hint="Enter BID"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine10"
+        android:id="@+id/editTextTextMultiLine5"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="230dp"
         android:ems="10"
-        android:hint="Enter Units of Blood to delete"
+        android:hint="Enter Units of Blood"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"/>
+        android:textColorHint="#FFFFFF" />
+
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="310dp"
+        android:entries="@array/bloodGroup_arrays"
+        android:prompt="@string/bloodGroup"
+        android:theme="@style/mySpinnerItemStyle" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="400dp"
+        android:padding="15dp"
         android:background="@drawable/rounded_corner"
         android:text="Submit"
-        android:textSize="18sp"  />
+        android:textSize="18sp" />
+
 </FrameLayout>
