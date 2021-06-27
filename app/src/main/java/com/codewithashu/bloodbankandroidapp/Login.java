@@ -28,7 +28,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mLoginuser = (EditText)findViewById(R.id.loginusername);
+        mLoginuser = (EditText)findViewById(R.id.loginemail);
         mLoginpass = (EditText)findViewById(R.id.loginPassword);
         mLogin = (Button)findViewById(R.id.loginbutton);
         progressBar = findViewById(R.id.progressBar2);
@@ -49,6 +49,7 @@ public class Login extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Dashboard.class));
 
                 if(TextUtils.isEmpty(name)){
+                    
                     mLoginuser.setError("Username is required");
                     return;
                 }
@@ -63,7 +64,7 @@ public class Login extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
 
-               /* fAuth.signInWithEmailAndPassword(name,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                fAuth.signInWithEmailAndPassword(name,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
@@ -74,7 +75,7 @@ public class Login extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
                         }
                     }
-                });*/
+                });
             }
         });
     }

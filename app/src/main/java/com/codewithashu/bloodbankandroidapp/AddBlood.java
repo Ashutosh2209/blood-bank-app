@@ -1,15 +1,14 @@
 package com.codewithashu.bloodbankandroidapp;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Addblood extends AppCompatActivity {
+import android.os.Bundle;
+
+public class AddBlood extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addblood);
-
-
+        setContentView(R.layout.activity_add_blood);
     }
 }

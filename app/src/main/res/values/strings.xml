@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">Blood Bank Android App</string>
+    <string name="app_name">Blood Bank </string>
+    <string name="bloodGroup">Choose a Blood Group</string>
+
+    <string-array name="bloodGroup_arrays">
+        <item>Choose a Blood Group</item>
+        <item>O-</item>
+        <item>O+</item>
+        <item>A-</item>
+        <item>A+</item>
+        <item>B-</item>
+        <item>B+</item>
+        <item>AB-</item>
+        <item>AB+</item>
+
+    </string-array>
+
 </resources>

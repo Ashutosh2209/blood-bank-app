@@ -16,17 +16,29 @@
         android:textColor="#FFFFFF"
         android:textSize="30sp" />
 
-    <EditText
-        android:id="@+id/editTextTextMultiLine"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="150dp"
-        android:ems="10"
-        android:hint="Enter Blood Group"
-        android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF" />
+        android:entries="@array/bloodGroup_arrays"
+        android:prompt="@string/bloodGroup"
+        android:theme="@style/mySpinnerItemStyle" />
+<!--        android:background="@color/my_spinner_background_color"-->
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTextMultiLine"-->
+<!--        android:layout_width="280dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="150dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="Enter Blood Group"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textColorHint="#FFFFFF" />-->
 
     <EditText
         android:id="@+id/editTextTextMultiLine2"
@@ -45,8 +57,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="300dp"
-
+        android:layout_marginTop="330dp"
+        android:padding="15dp"
         android:background="@drawable/rounded_corner"
         android:text="Submit"
         android:textSize="18sp" />
