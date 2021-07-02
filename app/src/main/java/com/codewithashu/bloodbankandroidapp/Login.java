@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +25,7 @@ public class Login extends AppCompatActivity {
     Button mLogin;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,42 +43,47 @@ public class Login extends AppCompatActivity {
             }
         });
 
+
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = mLoginuser.getText().toString().trim();
-                String pass = mLoginpass.getText().toString();
-                startActivity(new Intent(getApplicationContext(), Dashboard.class));
-
-                if(TextUtils.isEmpty(name)){
-                    
-                    mLoginuser.setError("Username is required");
-                    return;
-                }
-                if(TextUtils.isEmpty(pass)){
-                    mLoginpass.setError("Password is required");
-                    return;
-                }
-                if(pass.length() < 6){
-                    mLoginpass.setError("Password must be >=6 characters");
-                    return;
-                }
-                progressBar.setVisibility(View.VISIBLE);
-
-
-                fAuth.signInWithEmailAndPassword(name,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(Login.this, "Login Successfull",Toast.LENGTH_SHORT).show();
-
-                        }else{
-                            Toast.makeText(Login.this, "Error!.."+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
+                loginUserAccount();
+//                startActivity(new Intent(getApplicationContext(), Dashboard.class));
             }
         });
     }
+        private void loginUserAccount(){
+
+            String email = mLoginuser.getText().toString().trim();
+            String pass = mLoginpass.getText().toString();
+
+            if(TextUtils.isEmpty(email)){
+                mLoginuser.setError("Username is required");
+                return;
+            }
+            if(TextUtils.isEmpty(pass)){
+                mLoginpass.setError("Password is required");
+                return;
+            }
+            if(pass.length() < 6){
+                mLoginpass.setError("Password must be >=6 characters");
+                return;
+            }
+
+            fAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(Login.this, "Login Successfull",Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
+                        startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                    }else{
+                        Toast.makeText(Login.this, "Error!..Invalid Credentials",Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
+                    }
+                }
+            });
+
+        }
+
 }
