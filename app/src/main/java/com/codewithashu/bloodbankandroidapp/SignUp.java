@@ -27,7 +27,7 @@ import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
     TextView loginText;
-    EditText mSignupname, mSignupage, mSignupbloodgroup, mSignupphone, mSignupemail,mSignuppass;
+    EditText mSignupname, /*mSignupage, mSignupbloodgroup,*/ mSignupphone, mSignupemail, mSignuppass;
     Button mSignup;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
@@ -39,8 +39,8 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         mSignupname = (EditText)findViewById(R.id.Signupname);
-        mSignupage = (EditText)findViewById(R.id.Signupage);
-        mSignupbloodgroup = (EditText)findViewById(R.id.Signupbloodgrp);
+//        mSignupage = (EditText)findViewById(R.id.Signupage);
+//        mSignupbloodgroup = (EditText)findViewById(R.id.Signupbloodgrp);
         mSignupphone = (EditText)findViewById(R.id.Signupphone);
         mSignupemail = (EditText)findViewById(R.id.Signupemail);
         mSignuppass = (EditText)findViewById(R.id.Signuppassword);
@@ -62,8 +62,8 @@ public class SignUp extends AppCompatActivity {
                 String pass = mSignuppass.getText().toString();
                 String name = mSignupname.getText().toString();
                 String phno = mSignupphone.getText().toString();
-                String age = mSignupage.getText().toString();
-                String bg = mSignupbloodgroup.getText().toString();
+//                String age = mSignupage.getText().toString();
+//                String bg = mSignupbloodgroup.getText().toString();
 
                 if(TextUtils.isEmpty(email)){
                     mSignupemail.setError("Email is required");
@@ -74,13 +74,14 @@ public class SignUp extends AppCompatActivity {
                 }if(TextUtils.isEmpty(phno)){
                     mSignupphone.setError("Phone No is required");
                     return;
-                }if(TextUtils.isEmpty(age)){
-                    mSignupage.setError("Age is required");
-                    return;
-                }if(TextUtils.isEmpty(bg)){
-                    mSignupbloodgroup.setError("Blood Group is required");
-                    return;
                 }
+//                if(TextUtils.isEmpty(age)){
+//                    mSignupage.setError("Age is required");
+//                    return;
+//                }if(TextUtils.isEmpty(bg)){
+//                    mSignupbloodgroup.setError("Blood Group is required");
+//                    return;
+//                }
                 if(TextUtils.isEmpty(pass)){
                     mSignuppass.setError("Password is required");
                     return;
@@ -100,8 +101,8 @@ public class SignUp extends AppCompatActivity {
                             DocumentReference documentReference = fStore.collection("Users").document(userID);
                             Map<String, Object> user = new HashMap<>();
                             user.put("Full_Name", name);
-                            user.put("Blood_Group", bg);
-                            user.put("Age", age);
+//                            user.put("Blood_Group", bg);
+//                            user.put("Age", age);
                             user.put("Phone_Number", phno);
                             user.put("Email_Address", email);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {

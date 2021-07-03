@@ -25,7 +25,7 @@ public class Dashboard extends AppCompatActivity {
         cardRequest = (CardView)findViewById(R.id.request);
         cardAvailable = (CardView)findViewById(R.id.available);
 //        cardAddBlood = (CardView)findViewById(R.id.addblood);
-        cardDelete = (CardView)findViewById(R.id.delete);
+//        cardDelete = (CardView)findViewById(R.id.delete);
         cardLogOut = (CardView)findViewById(R.id.logout);
         fAuth = FirebaseAuth.getInstance();
 
@@ -106,13 +106,13 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-        cardDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), DeleteBlood.class);
-                startActivity(i);
-            }
-        });
+//        cardDelete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getApplicationContext(), DeleteBlood.class);
+//                startActivity(i);
+//            }
+//        });
 
         cardLogOut.setOnClickListener(new View.OnClickListener() {
             @Override

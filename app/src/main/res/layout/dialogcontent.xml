@@ -23,17 +23,23 @@
     <EditText
         android:id="@+id/ubid"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/dialog_rounded"
         android:hint="   Blood ID"
+        android:gravity="center"
         android:textSize="20sp" />
 
     <EditText
         android:id="@+id/uunits"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
         android:background="@drawable/dialog_rounded"
         android:hint="   Blood Units"
         android:textSize="20sp" />
@@ -41,8 +47,11 @@
     <EditText
         android:id="@+id/ubldgrp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/dialog_rounded"
         android:hint="   Blood Group"
         android:textSize="20sp" />
@@ -52,22 +61,11 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/round"
         android:text="Update"
         android:textColor="#fff"
         android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/tvuback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/round"
-        android:text="Back"
-        android:textColor="#fff"
-        android:textSize="15sp" />
 
 </LinearLayout>

@@ -1,5 +1,7 @@
 package com.codewithashu.bloodbankandroidapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,22 +32,23 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
 {
 
 
+    Button adelete;
 
     public myadapterAB(@NonNull FirestoreRecyclerOptions<model> options) {
             super(options);
-
         }
-
 
     @Override
     protected void onBindViewHolder(@NonNull final myadapterAB.myviewolder holder, final int position, @NonNull final model model) {
-
 
         holder.blood_ID.setText(model.getBlood_ID());
         holder.blood_Units.setText(model.getBlood_Units());
         holder.blood_Group.setText(model.getBlood_Group());
 
 
+        String docId = getSnapshots().getSnapshot(position).getId();
+
+        Log.d("GETREFTEST", docId);
 
 
                     holder.blood_edit.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +66,8 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
                             EditText blood_ID = myview.findViewById(R.id.ubid);
                             EditText blood_Units =myview.findViewById(R.id.uunits);
                             EditText blood_Group =myview.findViewById(R.id.ubldgrp);
-                            Button update = myview.findViewById(R.id.uupdate);
+                            Button aupdate = myview.findViewById(R.id.uupdate);
+
 
                             blood_ID.setText(model.getBlood_ID());
                             blood_Units.setText(model.getBlood_Units());
@@ -71,12 +75,7 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
 
                             dialogPlus.show();
 
-
-                            String docId = getSnapshots().getSnapshot(position).getId();
-
-                            Log.d("GETREFTEST", docId);
-
-                                update.setOnClickListener(new View.OnClickListener() {
+                                aupdate.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
                                         Map<String, Object> map = new HashMap<>();
@@ -121,8 +120,6 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
                                         });
 */
 
-
-
 //                                        docRef.get();
 
                                         /*docRef.collection("Donate Blood").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -143,6 +140,8 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
                                             }
                                         });*/
 
+
+
                                     }
                                 });
                       }
@@ -150,8 +149,36 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
 
                     });
 
+                    holder.blood_delete.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            AlertDialog.Builder builder=new AlertDialog.Builder(holder.blood_ID.getContext());
+                            builder.setTitle("Delete Record");
+                            builder.setMessage("Are you sure you want to delete this record ?");
+
+                            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    final DocumentReference docRef = FirebaseFirestore.getInstance().collection("Donate Blood")
+                                            .document(docId);
+
+                                    docRef.delete();
+                                }
+                            });
+
+                            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                }
+                            });
+                            builder.show();
+                        }
+                    });
 
     }
+
+
 
     @NonNull
     @Override
