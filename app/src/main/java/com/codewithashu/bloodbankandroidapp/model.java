@@ -8,11 +8,12 @@ public class model{
 
     }
 
-    public model(String blood_ID, String blood_Units, String blood_Group) {
+    public model(String blood_ID, String blood_Units, String blood_Group, String key) {
         this.blood_ID = blood_ID;
         this.blood_Units = blood_Units;
         this.blood_Group = blood_Group;
     }
+
 
     public String getBlood_ID() {
         return blood_ID;
@@ -37,4 +38,7 @@ public class model{
     public void setBlood_Group(String blood_Group) {
         this.blood_Group = blood_Group;
     }
+
+
+
 }
