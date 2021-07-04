@@ -21,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class DonateBlood extends AppCompatActivity {
 
-    EditText Bloodid, Bloodunits;
+    EditText Bloodid, Bloodunits, Phone_No;
     Spinner BloodGroup;
     Button Donate;
     ProgressBar progressBar;
@@ -35,7 +35,7 @@ public class DonateBlood extends AppCompatActivity {
 
         Bloodid = (EditText) findViewById(R.id.bid);
         Bloodunits = (EditText) findViewById(R.id.units);
-
+        Phone_No = (EditText)findViewById(R.id.phone);
         BloodGroup = (Spinner) findViewById(R.id.bldgrp);
         progressBar = findViewById(R.id.progressBar);
         fStore = FirebaseFirestore.getInstance();
@@ -47,8 +47,9 @@ public class DonateBlood extends AppCompatActivity {
                 String blood_ID = Bloodid.getText().toString().trim();
                 String blood_Units = Bloodunits.getText().toString();
                 String blood_Group = BloodGroup.getSelectedItem().toString();
+                String phone_No = Phone_No.getText().toString();
 
-                if (!validateInputs(blood_ID, blood_Units, blood_Group)) {
+                if (!validateInputs(blood_ID, blood_Units, blood_Group, phone_No)) {
 
                     CollectionReference dbDonate = fStore.collection("Donate Blood");
 
@@ -56,7 +57,8 @@ public class DonateBlood extends AppCompatActivity {
 
                             blood_ID,
                             blood_Units,
-                            blood_Group
+                            blood_Group,
+                            phone_No
                     );
 
 
@@ -80,7 +82,7 @@ public class DonateBlood extends AppCompatActivity {
         });
     }
 
-    public boolean validateInputs(String blood_ID, String blood_Units, String blood_Group) {
+    public boolean validateInputs(String blood_ID, String blood_Units, String blood_Group, String phone_No) {
         if (blood_ID.isEmpty()) {
             Bloodid.setError("Blood Id is required");
             Bloodid.requestFocus();
@@ -89,6 +91,10 @@ public class DonateBlood extends AppCompatActivity {
         if (blood_Units.isEmpty()) {
             Bloodunits.setError("Blood Units is required");
             Bloodunits.requestFocus();
+            return true;
+        }if (phone_No.equals("")) {
+            Phone_No.setError("Phone Number is required");
+            Phone_No.requestFocus();
             return true;
         }
         if (blood_Group.equals("Choose a Blood Group")){

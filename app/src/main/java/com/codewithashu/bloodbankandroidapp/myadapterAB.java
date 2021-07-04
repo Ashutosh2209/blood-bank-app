@@ -32,7 +32,7 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
 {
 
 
-    Button adelete;
+
 
     public myadapterAB(@NonNull FirestoreRecyclerOptions<model> options) {
             super(options);
@@ -44,6 +44,8 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
         holder.blood_ID.setText(model.getBlood_ID());
         holder.blood_Units.setText(model.getBlood_Units());
         holder.blood_Group.setText(model.getBlood_Group());
+        holder.phone_No.setText(model.getPhone_No());
+
 
 
         String docId = getSnapshots().getSnapshot(position).getId();
@@ -66,12 +68,14 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
                             EditText blood_ID = myview.findViewById(R.id.ubid);
                             EditText blood_Units =myview.findViewById(R.id.uunits);
                             EditText blood_Group =myview.findViewById(R.id.ubldgrp);
+                            EditText Phone_No =myview.findViewById(R.id.uphone);
                             Button aupdate = myview.findViewById(R.id.uupdate);
 
 
                             blood_ID.setText(model.getBlood_ID());
                             blood_Units.setText(model.getBlood_Units());
                             blood_Group.setText(model.getBlood_Group());
+                            Phone_No.setText(model.getPhone_No());
 
                             dialogPlus.show();
 
@@ -82,6 +86,7 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
                                         map.put("blood_ID", blood_ID.getText().toString());
                                         map.put("blood_Units", blood_Units.getText().toString());
                                         map.put("blood_Group", blood_Group.getText().toString());
+                                        map.put("phone_No", Phone_No.getText().toString());
 
                                         final DocumentReference docRef = FirebaseFirestore.getInstance().collection("Donate Blood")
                                                 .document(docId);
@@ -189,7 +194,7 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
 
     static class myviewolder extends RecyclerView.ViewHolder{
 
-        TextView blood_ID, blood_Units, blood_Group;
+        TextView blood_ID, blood_Units, blood_Group, phone_No;
         ImageView blood_edit, blood_delete;
 
         public myviewolder(@NonNull View itemView) {
@@ -197,6 +202,7 @@ public class myadapterAB extends FirestoreRecyclerAdapter<model, myadapterAB.myv
             blood_ID =(TextView)itemView.findViewById(R.id.tvbid);
             blood_Units = (TextView)itemView.findViewById(R.id.tvunits);
             blood_Group = (TextView)itemView.findViewById(R.id.tvbloodgrp);
+            phone_No = (TextView)itemView.findViewById(R.id.tvphone);
 
             blood_edit = (ImageView)itemView.findViewById(R.id.tvedit);
             blood_delete = (ImageView)itemView.findViewById(R.id.tvdelete);

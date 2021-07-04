@@ -21,6 +21,7 @@
         android:layout_width="146dp"
         android:layout_height="158dp"
         android:layout_gravity="left|center_vertical"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="150dp"
         android:src="@drawable/loginbg_new" />
 
@@ -47,17 +48,27 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
 
-    <EditText
-        android:id="@+id/loginPassword"
-        android:layout_width="280dp"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="250dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF" />
+        android:textColorHint="#fff"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/loginPassword"
+            android:layout_width="281dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="247dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="#fff"
+
+            android:textColorHint="#FFFFFF" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/loginbutton"
@@ -65,7 +76,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="330dp"
-
         android:background="@drawable/rounded_corner"
         android:text="Login"
         android:textSize="18sp" />
@@ -75,8 +85,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="410dp"
         android:text="New User? Register Here"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:selectableItemBackground"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 

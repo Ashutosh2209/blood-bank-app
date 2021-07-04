@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Blood Bank </string>
     <string name="bloodGroup">Choose a Blood Group</string>
+    <string name="search_color">Search by Blood Group</string>
 
     <string-array name="bloodGroup_arrays">
         <item>Choose a Blood Group</item>

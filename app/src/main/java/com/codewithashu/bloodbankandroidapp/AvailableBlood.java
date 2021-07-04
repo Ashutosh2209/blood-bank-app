@@ -1,6 +1,10 @@
 package com.codewithashu.bloodbankandroidapp;
 
 import android.os.Bundle;
+import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,6 +32,8 @@ public class AvailableBlood extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.newrecyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
 
 //
 //        progressDialog = new ProgressDialog(this);
@@ -77,7 +83,50 @@ public class AvailableBlood extends AppCompatActivity {
         myadapter.stopListening();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.search_availableblood, menu);
+
+        MenuItem menuItem = menu.findItem(R.id.asearch);
+
+        SearchView searchView = (SearchView)menuItem.getActionView();
+
+        searchView.setQueryHint(Html.fromHtml("<font color = #ffffff>" +
+                getResources().getString(R.string.search_color) + "</font>"));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                proccesssearch(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                proccesssearch(s);
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private void proccesssearch(String s){
+
+//        Query searchquery = fStore.collection("Donate Blood").orderBy("blood_ID").startAt(s).endAt(s+"\uf8ff", model.class);
+
+        FirestoreRecyclerOptions<model> options = new FirestoreRecyclerOptions.Builder<model>()
+                .setQuery(fStore.collection("Donate Blood").orderBy("blood_Group", Query.Direction.ASCENDING).startAt(s).endAt("\uf8ff"), model.class)
+                .build();
+
+        myadapter = new myadapterAB(options);
+        myadapter.startListening();
+        recyclerView.setAdapter(myadapter);
+
+    }
 }
+
 //        myadapter = new myadapterAB(opt);
 
 

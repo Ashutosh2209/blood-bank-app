@@ -13,6 +13,7 @@
         android:layout_height="106dp"
         android:layout_gravity="left|center_vertical"
         android:layout_marginTop="200dp"
+        android:layout_marginLeft="10dp"
         android:src="@drawable/loginbg_new" />
 
     <TextView
@@ -96,6 +97,9 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="475dp"
         android:text="Already have an account? Login Here"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:selectableItemBackground"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 

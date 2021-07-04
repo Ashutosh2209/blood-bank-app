@@ -25,10 +25,9 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/dialog_rounded"
-        android:hint="   Blood ID"
+        android:hint="Blood ID"
         android:gravity="center"
         android:textSize="20sp" />
 
@@ -37,11 +36,10 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:background="@drawable/dialog_rounded"
-        android:hint="   Blood Units"
+        android:hint="Blood Units"
         android:textSize="20sp" />
 
     <EditText
@@ -50,19 +48,29 @@
         android:layout_height="45dp"
         android:gravity="center"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/dialog_rounded"
+        android:hint="Blood Group"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/uphone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/dialog_rounded"
-        android:hint="   Blood Group"
+        android:hint="Phone Number"
         android:textSize="20sp" />
 
     <Button
         android:id="@+id/uupdate"
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/round"
         android:text="Update"
         android:textColor="#fff"

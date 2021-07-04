@@ -47,7 +47,8 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loginUserAccount();
-                startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                progressBar.setVisibility(View.VISIBLE);
+//                startActivity(new Intent(getApplicationContext(), Dashboard.class));
             }
         });
     }
