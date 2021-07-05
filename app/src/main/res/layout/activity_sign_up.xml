@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DD3A3A"
+    android:background="#DD2929"
     tools:context=".MainActivity">
 
     <ImageView
@@ -13,6 +13,7 @@
         android:layout_height="106dp"
         android:layout_gravity="left|center_vertical"
         android:layout_marginTop="200dp"
+        android:layout_marginLeft="10dp"
         android:src="@drawable/loginbg_new" />
 
     <TextView
@@ -20,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="sans-serif-black"
         android:text="Sign Up"
         android:textColor="#FFFFFF"
@@ -31,35 +32,9 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="140dp"
         android:ems="10"
         android:hint="Name"
-        android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/Signupage"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="130dp"
-        android:ems="10"
-        android:hint="Age"
-        android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/Signupbloodgrp"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-
-        android:layout_marginTop="190dp"
-
-        android:ems="10"
-        android:hint="Blood Group"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
@@ -70,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
 
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="200dp"
 
         android:ems="10"
         android:hint="Phone Number"
@@ -83,7 +58,7 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="260dp"
         android:ems="10"
         android:hint="Email Address"
         android:inputType="textPersonName"
@@ -95,11 +70,11 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="320dp"
 
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
 
@@ -109,7 +84,7 @@
         android:layout_width="123dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="435dp"
+        android:layout_marginTop="400dp"
 
         android:background="@drawable/rounded_corner"
         android:text="Register"
@@ -120,8 +95,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="495dp"
+        android:layout_marginTop="475dp"
         android:text="Already have an account? Login Here"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:selectableItemBackground"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
@@ -131,7 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="180dp"
-        android:layout_marginTop="535dp"
+        android:layout_marginTop="525dp"
         android:visibility="invisible" />
 
 </FrameLayout>

@@ -2,15 +2,15 @@ package com.codewithashu.bloodbankandroidapp;
 
 public class User {
 
-    String mSignupname,mSignupbloodgroup;
-    long mSignupage, mSignupphone;
+    String mSignupname/*,mSignupbloodgroup*/;
+    long /*mSignupage,*/ mSignupphone;
 
     public User(){}
 
     public User(String mSignupname, String mSignupbloodgroup, long mSignupage, long mSignupphone) {
         this.mSignupname = mSignupname;
-        this.mSignupbloodgroup = mSignupbloodgroup;
-        this.mSignupage = mSignupage;
+//        this.mSignupbloodgroup = mSignupbloodgroup;
+//        this.mSignupage = mSignupage;
         this.mSignupphone = mSignupphone;
     }
 
@@ -22,21 +22,21 @@ public class User {
         this.mSignupname = mSignupname;
     }
 
-    public String getmSignupbloodgroup() {
-        return mSignupbloodgroup;
-    }
+//    public String getmSignupbloodgroup() {
+//        return mSignupbloodgroup;
+//    }
+//
+//    public void setmSignupbloodgroup(String mSignupbloodgroup) {
+//        this.mSignupbloodgroup = mSignupbloodgroup;
+//    }
 
-    public void setmSignupbloodgroup(String mSignupbloodgroup) {
-        this.mSignupbloodgroup = mSignupbloodgroup;
-    }
-
-    public long getmSignupage() {
-        return mSignupage;
-    }
-
-    public void setmSignupage(long mSignupage) {
-        this.mSignupage = mSignupage;
-    }
+//    public long getmSignupage() {
+//        return mSignupage;
+//    }
+//
+//    public void setmSignupage(long mSignupage) {
+//        this.mSignupage = mSignupage;
+//    }
 
     public long getmSignupphone() {
         return mSignupphone;
